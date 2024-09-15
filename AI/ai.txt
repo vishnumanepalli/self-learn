@@ -1,0 +1,34 @@
+Moore's Law:
+Increase of computer power for same cost by timeline 
+in 18-24 months computer power increases by 2 times for same cost
+
+Plan of Attack:
+1) Reinforcement Learning
+2) Bellman Equation
+3) The 'Plan'
+4) Markov Decision Process(MDP)
+5) Policy vs Plan
+6) Adding a living Penalty
+7) Q-Learning Intuition
+8) Temporal difference
+9) Q-Learning Visualization
+
+Reinforcement Learning:
+> Environment: where AI will train and build
+> Agent is AI or mind
+> Agent do actions and get reward for that
+> Based on it, it will learn 
+> Don't have any algorithm and let reinforcement algorithm let it figure out on it's own.
+> Reinforced algorithms work sometimes better than pre programmed dogs
+> reinforced dogs can play soccer if env and actions are specified.
+
+Bellman Equation:
+s -> state
+a -> action
+R -> reward +1/0/-1
+gamma -> discount
+v -> value
+v(s) = max(a) [R(s,a) + gamma * v(s')]
+s' = new state
+
+Plan:
