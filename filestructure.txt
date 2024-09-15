@@ -1,4 +1,14 @@
+|-- AI
 |-- README.md
+|-- fastapi
+    |-- ReadMe.md
+    |-- args.py
+    |-- decarator.py
+    |-- decarator_args.py
+    |-- git_credentials.sh
+    |-- kwargs.py
+    |-- start.sh
+    |-- venv.sh
 |-- system_commands
     |-- alias.txt
     |-- chrome_shortcuts.txt
