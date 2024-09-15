@@ -1,0 +1,70 @@
+class Animal(): #camelcase
+    species = "XaXX"//sattic 
+    self.
+    def __init__(self, param1):
+        pass
+    
+    def <method>(self):
+self mentioned thta it is connected to class
+self is reference to instance of class
+
+my_dog = Dog()
+my_dog = Dog(mybreed = 'Bomby')
+
+class <Name>(Animal): #camelcase
+    species = "XaXX"//sattic 
+    self.
+    def __init__(self, param1):
+        Animal.__init__(self)  
+        pass
+    
+    def <method>(self):
+        raise NotImplementedError("Subclass must imolement this method")
+
+Special Methods(magic/Dunder):
+def __str__(self)://tostring
+    retun String 
+
+def __len__(self):
+    return self.<var>
+
+def __del__(self):
+    print("deleted")
+
+del b// deletes variable
+
+PyPi ://rspository for open source 3rd party packages
+
+Modules and Packages:
+module means call py script in another py script 
+package : collection of packages
+
+from myfile import add//myfile.txt contains add function 
+__int__.py tells it is a module
+
+if name == "__main__"://if not mentioned, all level-1 code are remodified in compile time
+    print("it is runing directly")
+else:
+    print("it is being impoirted")
+
+Errors and Exception Handling:
+try, expect, finally
+
+Cannot add int and str in py//can in java
+we can use except else to run else if there is no Exception
+
+Testing:
+pylint and unittest
+command: pylint simple.py
+
+string.capitalize()
+How It Works:
+First Character to Uppercase: The first character of the string is converted to uppercase.
+Rest of the Characters to Lowercase: All other characters in the string are converted to lowercase.
+
+str.title()
+//capitalize every first letetr for every word
+
+class TestCap(unittest.testCase):
+    def test1(self):
+        self.assertequal(calculated, expected)

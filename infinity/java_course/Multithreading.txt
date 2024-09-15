@@ -1,0 +1,115 @@
+extends thread or implements runnable
+
+class Task1 extends Thread {
+    public void run() {
+        System.out.println("Task1 Started ");
+        for(int i=101; i<=199; i++) {
+            System.out.print(i + " ");
+        }
+        System.out.println("\nTask1 Done");
+    }
+}
+Task1 task1 = new Task1();
+task1.start();
+ 
+class Task2 implements Runnable {
+    @Override
+    public void run() {
+        System.out.println("Task2 Started ");
+        for(int i=201; i<=299; i++) {
+            System.out.print(i + " ");
+        }
+        System.out.println("\nTask2 Done");
+    }
+}
+Task2 task2 = new Task2();
+Thread task2Thread = new Thread(task2);
+task2Thread.start();
+//neds to craete thread class if used runnable.
+
+Different states of a thread are:
+
+NEW: A thread is in this state as soon as it's been created, but its start() method hasn't yet been invoked.
+For Task1 : After the execution of Task1 task1 = new Task1();
+For Task2 : After the execution of Task2 task2 = new Task2(); task2Thread = new Thread(task2);
+
+TERMINATED/DEAD: When all the statements inside a thread's run() method have been been completed,
+that thread is said to have terminated.
+A thread can be in any one of the remaining three states, after its start() method has been invoked.
+
+RUNNING: If the thread is currently running.
+
+RUNNABLE: If the thread is not   currently running, but is ready to do so at any time. //stopped for a split second for another thread to run. 
+
+BLOCKED/WAITING: If the thread is not currently running on the processor, but is not ready to execute either.
+This may be the case if it's waiting for an external resource (such as a user's input) or another thread.
+
+PLacing priority in thrads: //it is just a request. doesn't means always in priority.
+Range(1, 10) normal val =5
+
+Communication betwen Threads:
+wait for task1 to complete
+task1.join()//wait for task1 to complete
+
+Thread.sleep(1000)// in ms to sleep
+
+Thread.yield();//willing to yield it's current usde of processor
+//it is just a request
+
+synchronized()//only one of the threads will be executing tht method. remaining will wait.
+//lot of overhead.
+
+Control over Threads:
+Executor Service// control over threads is acheieved
+
+ExecutorService executorService = Executors.newSingleThreadExecutor();
+executorService.execute(new Task1());
+executorService.execute(new Thread(new Task2())); 
+//shutdowm at end
+
+ExecutorService executorService = Executors.newFixedThreadPool(2);
+
+Retrun values from threads:
+class CallableTask implements Callable<String> {
+    private String name;
+
+    public CallableTask(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String call() throws Exception {
+        Thread.sleep(1000);
+        return "Hello " + name;
+    }
+}
+create a callable task
+use submit(task) //invokeAll, invokeAny
+
+Future<String> welcomeFuture = executorService.submit(new CallableTask("in28Minutes"));
+System.out.println("CallableTask in28Minutes Submitted");
+String welcomeMessage = welcomeFuture.get();
+System.out.println(welcomeMessage);
+executorService.shutdown();
+
+List<CallableTask> tasks = List.of(new CallableTask("in28Minutes"),
+new CallableTask("Ranga"),
+new CallableTask("Adam"));
+List<Future<String>> welcomeAll = executorService.invokeAll(tasks);
+for(Future<String> welcomeFuture : welcomeAll) {
+System.out.println(welcomeFuture.get());
+}
+
+Exceptions:
+Try with resources
+try (Scanner scanner = new Scanner(System.in)) {
+    // ... Program logic, probably using scanner input
+    int[] numbers = {1, 2, 3, 4};
+    int num = numbers[5];
+}
+//scanner.close();
+//scanner will automatically close
+
+catch(IoExceotion | SQLException ex){
+    ex.printStackTrace();
+}

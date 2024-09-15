@@ -1,0 +1,52 @@
+@Configuration to specify @beans are there
+@Bean to create a instance of it
+@Bean(name ="hrgn")
+
+@Qualifier// to autowire the object
+
+fun(@Qualifier(""rgrtj)name, ... ) 
+
+@Component and @ComponentScan
+
+//Fie;d Injection
+@AutoWired
+Depen d1;
+
+//Constructor auto by bean
+@Autowired
+public MyServiceImpl(MyRepository myRepository) {
+    this.myRepository = myRepository;
+}
+
+setter Injection:
+public void setDependency(Dependency d1){
+    this.Dependency = dependency;
+}
+
+Lazy Constrcution 
+Post Construct pre Detruct
+@Lazy makes object creation at time of access
+eager is default//recommended
+
+Prototype and Singleton:
+@Scope(value = COnfigure.ScopePrototype)
+//whenever access craete a new Bean
+normally Singleton
+
+scopes:
+request, session, appilicxation, websocket
+
+java vs spring singleton:
+one object per ioc containeris spring's, per JVM java's
+
+PrePost Annotations:
+@PostConstrcut
+before bean is destroyed:
+@PreDestroy
+
+Jakarta CDI uses Named and Inject in place of Component and Autowired
+XML makes POJO's clean
+
+devTools makes rerun the changes without initilaing server
+
+Project Object Model pom.XML

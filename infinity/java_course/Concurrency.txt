@@ -1,0 +1,104 @@
+Concurrency: counter:not thread-safe
+i++ is not atomic use synchronized
+
+Problems with synchronized:
+if one class have multiple synchronized functions, even if their are independent they will wait for any synchronized method to complete
+
+Solution: Locking:
+get and release Lock
+
+Lock lock = new ReentrantLock();
+different lock for every idenpendent lock. and same lock for dependent code
+//parallel synchronizzation
+
+public void incrementI() {
+    lockForI.lock();
+    i++;
+    lockForI.unlock();
+}
+
+Atomic Integer
+i.incrementAndGet();//thread-safe
+Maynot work for wevreything
+
+ConcurrentHashMap:
+concurrent collections:offer thread safety with low low peformence impact
+
+it will make group of atomic actions thread safe
+LongAdder for thread-safe
+
+CopyOnWrite
+
+Static IMports:
+import static java.lang.System.out
+out.println("rg");
+
+Client oth = (Client) obj//if parent or current class assignr=ed to object and wanted to reassign to lower subclass
+
+Hashcode importance: //to store objects in buckets
+
+classes have default, public
+
+private, protetcted, public, default all can be used if declaed in same class
+protetcted, public, default all can be used if declaed in same package
+public method in different package
+
+protected- same package or sub classes
+default - same package
+
+Non access modifier - final
+final class cannot have subclasses
+final method cannot be overrided
+final variable cannot be changed
+final argument(parameter) cannot be changed in method.
+
+static: count of objects for a class
+static variable: acts as global vraiable for class
+static methods: can be called without instance //shared by all instaneces of a class
+static methods cannot instnace vraibalesor instance methods
+static class: 
+
+public sttaic final:class variable and cannot be changed
+
+Inner class vs Staic nested classes:
+inner class: class declared in class
+static nested class: inner class with static attached to it
+
+staticclass s = new staticclass();//static class instance can be declared in a  class.//can use static variables in enclosed class
+but inner class can only be declared with instance of enclosed object,//can use all variables in enclosed class
+
+Anonymusclass:
+Collections.sort(animals, new DescComparartor());//DEsccomparartor is declared and implemented
+Collections.sort(animals, new Comparartor<String>(){//implemnt emthod});
+
+Enum:
+restricitig the values that a object can contain
+
+enum Season{
+    "",....
+}
+ordinal means values assiged in enum based on order in enum
+
+How to fix ordinals in class to make it immutable in a long run:
+SUMMER(1), Winter(2)..
+private Season(int value){
+    this.value =2;
+}
+
+Inbuild Enums:
+month, day.
+
+Enum:
+0ublic Direction left() {
+    switch (this) {
+        case NORTH:
+            return WEST;
+        case WEST:
+            return SOUTH;
+        case SOUTH:
+            return EAST;
+        case EAST:
+            return NORTH;
+    }
+    return this;
+}

@@ -1,0 +1,40 @@
+%%writefile myfile.txt //create file in jupyter
+First
+Second
+Third
+Fourth
+
+
+Jupyter Notebook:
+ctrl+enter - run 
+shift+enter - run with go to next code box(if not will create)
+shidt+<tab> : at fun gives fun definition
+A
+: insert cell above
+B
+: insert cell below
+X
+: cut selected cells
+C
+: copy selected cells
+Shift-V
+: paste cells above
+V
+: paste cells below
+Z
+: undo cell deletion
+
+use interrupt to stop infinte looping or break if time takes or break if needed manullay
+
+if u run input() twice without giving input, we are in trouble. 
+need to restart the code 
+
+from Ipython.display import clear_ouptut
+clear_ouput()//clear output in jupyter
+
+import random
+random.randint(0,1)
+
+%%timeit
+stmt
+//jupyter code to comapre 

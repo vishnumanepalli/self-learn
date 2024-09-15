@@ -1,0 +1,126 @@
+Web Scarping:
+each web for web scarping is unique.
+
+BeautifulSoup and request libraries
+
+import requests
+result = request.get("http link")
+type: requests.model.Response
+result.text
+//convert into BeautifulSoup
+
+import bs4
+soup = bs4.BeautifulSoup(result.txt, "lxml")
+soup.seelct('title')/[]list return 
+
+Grabbing Title:
+soup.select('title')[0].getText()
+Type: bs4.element.Tag
+
+Grabbing Class:
+soup.select(‘div’)              All elements with ‘div’ tag
+soup.select(‘#some_id’)         Elements containing id=’some_id’
+soup.select(‘.some_class’)      Elements containing class = ‘some_class’
+soup.select(‘div span’)         Any elements named span within a div element.
+soup.select(‘div > span’)       Any elements named span directly within a div element, with nothing in between.
+
+computer['src'] for getting link
+
+<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Deep_Blue.jpg/220px-Deep_Blue.jpg'>
+//in markdown 
+
+image_link = requests.get('https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Deep_Blue.jpg/220px-Deep_Blue.jpg')
+# The raw content (its a binary file, meaning we will need to use binary read/write methods for saving it)
+image_link.content
+
+f = open('my_new_file_name.jpg','wb')
+f.write(image_link.content)
+f.close()
+Now we can display this file right here in the notebook as markdown using:
+
+<img src="'my_new_file_name.jpg'>
+Just write the above line in a new markdown cell and it will display the image we just downloaded!
+
+wb - write binary
+
+Web Scraping for multiple pages:
+base_url = 'http://books.toscrape.com/catalogue/page-{}.html'\
+
+two_star_titles = []
+
+for n in range(1,51):
+
+    scrape_url = base_url.format(n)
+    res = requests.get(scrape_url)
+    
+    soup = bs4.BeautifulSoup(res.text,"lxml")
+    books = soup.select(".product_pod")
+    
+    for book in books:
+        if len(book.select('.star-rating.Two')) != 0:
+            two_star_titles.append(book.select('a')[1]['title']) 
+
+
+space changes to .  
+
+name.text gives sentences in tag
+
+images in Python:
+pillow
+
+from PIl import image
+mac = Image.open("path")
+mac.show()
+
+mac.crop((0,0,100,100))
+mac.paste(im=computer, box(0,0))
+mac.resize(1000, 5000)
+mac.rortate(90)
+
+red green blue, aplha(transaprency)
+blue.save("prple.png")//overwrite and create one of not present
+
+CSV's:
+Openpyxl
+data = open('a.csv')
+csv_data = csv.reader(data)//cannnot convert to text due to unicode decoding 
+we have  to ope eith utf-8
+open(".csv", encoding = 'utf-8')
+daat = list(csv_data)
+csv_writer = csv.writer(file, deloimeter=',')
+csv_writer.writerows([a,b,c])
+
+pdf is protable document format 
+PyPDF2
+rb -read binary
+f = open("file.pdf", mode = 'rb')
+p = PyPDF2.PDFFilereader(f)
+p.numpages
+s = p.getpage(0)
+s.extractText()
+
+
+import smtplib for emails
+import getpass for passwords
+getpass.getpass("give m epassord")
+smtp.starttls()
+smtp_object.login(email, password)
+
+import imaplib
+M = impalib.IMAP4_SSl('imap.gmail.com')
+M.login(email, password)
+M.list()
+M.select('indox')
+
+typ, data = M.search()
+result, email_data = M.fetch(data[0],"(RFC822)")
+raw_email = email_data[0][1].decode('utf-8')
+
+import email
+email_msg = email.message_from_string(raw_email)
+
+for part in email_message.walk():
+    if part.get_content_type() == "text/plain":
+        body = part.get_payload(decode=True)
+        print(body)
+

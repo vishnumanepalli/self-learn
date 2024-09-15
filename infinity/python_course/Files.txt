@@ -1,0 +1,31 @@
+myfile = open("myfile.txt")
+//open file 
+if wrong file give filefounderror
+
+pwd: to get diretory i jupyter
+myfile = open("myfile.txt")
+myfile.read()//full text in string with \n's 
+
+myfile.read()//again calls for empty string beacuse cursor changes
+myfile.seek(0)//reset cursor
+
+myfile.readlines()//gives list of lines
+myfile = open("C\\Users\\")// \\is escape for latter \
+//abov - windows, for macorlinix folder/filee.txt
+
+myfile.close() //close file
+
+With open() as file:
+    contents = myfile.read()
+//will auto close it
+
+open(path, mode)
+mode: r - read //cannot write
+w = write //cannot read 
+//w overties or craete file
+a = append //add on files 
+r+ = reading and writing
+w+ = writing and reading//same as w for file
+ 
+file.write("gn")//for writing
+open(path, mode ='w')//won't give error if not present, it will craete one
