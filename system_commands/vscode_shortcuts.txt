@@ -1,0 +1,3 @@
+ctrl+k ctrl+0 for fold all 
+
+ctrl+k ctrl+ j unfold all

@@ -1,0 +1,17 @@
+#Common Aliases
+
+# Clear the terminal
+alias c='clear'
+
+# Git status
+alias gs='git status'
+
+# Git fetch
+alias gf='git fetch'
+
+# Git pull
+alias gp='git pull'
+
+
+#Custom alias
+alias ba='black app'

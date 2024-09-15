@@ -1,0 +1,8 @@
+move to left workspace: ctrl+ alt +left //lly to right
+ or                     super + page up //lly for down
+
+move window to left workspace: shift + super + page up //lly for page down
+
+sudo chmod 777 -v my-directory //to remove directory
+
+

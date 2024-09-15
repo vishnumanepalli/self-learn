@@ -1,0 +1,8 @@
+|-- README.md
+|-- system_commands
+    |-- alias.txt
+    |-- chrome_shortcuts.txt
+    |-- cli_shortcuts.txt
+    |-- git_commands.txt
+    |-- linux_shortcuts.txt
+    |-- vscode_shortcuts.txt

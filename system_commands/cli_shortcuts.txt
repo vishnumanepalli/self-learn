@@ -1,0 +1,16 @@
+alias alias_name='command_to_run'
+//alias commands to run custom command in short
+
+nano ~/.bashrc
+//for aliases
+
+redis-cli -u redis://default:QDePRbxBgx3lBoyp2x7MLcZlKOdTy7o4@redis-15821.c266.us-east-1-3.ec2.redns.redis-cloud.com:15821
+
+redis connection command
+
+chsh -s $(which zsh)
+//for zsh setup
+
+zsh //run command
+
+
