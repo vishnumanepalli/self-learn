@@ -1,0 +1,60 @@
+|-- AI
+    |-- ai.txt
+|-- README.md
+|-- fastapi
+    |-- ReadMe.md
+    |-- args.py
+    |-- decarator.py
+    |-- decarator_args.py
+    |-- git_credentials.sh
+    |-- kwargs.py
+    |-- start.sh
+    |-- venv.sh
+|-- infinity
+    |-- aws_course
+        |-- Readme.md
+        |-- aws_cli.sh
+    |-- course_certificates
+        |-- UC-9079f40b-2ecf-45f5-9590-0fbb51328f6d.pdf
+        |-- java_certificate.pdf
+    |-- java_course
+        |-- Concurrency.txt
+        |-- JavaProgrammingForBeginners-CourseBook.pdf
+        |-- JavaProgrammingForBeginners-Presentation.pdf
+        |-- Main.class
+        |-- Main.java
+        |-- Multithreading.txt
+        |-- ReadMe.txt
+        |-- ReadMe2.txt
+        |-- ReadMe3.txt
+        |-- ReadMe4.txt
+        |-- ReadMe5.txt
+        |-- Spring.txt
+        |-- a.class
+    |-- js_course
+        |-- ReadMe.md
+        |-- disable_right_click.js
+    |-- python_course
+        |-- .ipynb_checkpoints
+            |-- c-checkpoint.ipynb
+        |-- Files.txt
+        |-- ReadMe2.txt
+        |-- ReadMe3.txt
+        |-- ReadMe4.txt
+        |-- ReadMe5.txt
+        |-- ReadMe6.txt
+        |-- a.py
+        |-- b.ipynb
+        |-- c.ipynb
+        |-- class.txt
+        |-- code.txt
+        |-- jupy_cmds.txt
+        |-- readMe.txt
+        |-- web_scraping.txt
+|-- system_commands
+    |-- alias.txt
+    |-- chrome_shortcuts.txt
+    |-- cli_shortcuts.txt
+    |-- git_commands.txt
+    |-- linux_shortcuts.txt
+    |-- vscode_shortcuts.txt
